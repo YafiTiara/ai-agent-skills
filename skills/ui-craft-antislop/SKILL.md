@@ -1,0 +1,24 @@
+---
+name: ui-craft-antislop
+description: >-
+  Anti-slop frontend & UI design system combining taste-skill, anti-slop, and
+  Impeccable (DESIGN.md / PRODUCT.md tokens). Use automatically whenever designing,
+  building, restyling, or reviewing any landing page, SaaS dashboard, web app,
+  or UI component.
+---
+
+# UI Craft & Anti-Slop Design System
+
+## 1. One Cohesive System (Design Tokens First)
+- If `DESIGN.md` or `PRODUCT.md` exists in the project, read and follow its exact color palette, typography scale, spacing, and component rules.
+- Otherwise, establish a single restrained palette (1 dominant background, 1 primary accent, clear neutral hierarchy) and consistent spacing/radius tokens before writing components.
+
+## 2. Anti-Slop Visual Rules
+- **Reject generic AI clichés**: avoid purple/indigo-pink neon gradients, floating glassmorphic cards everywhere, generic 3-column icon-box grids, fake vanity metrics, and gratuitous bounce/pulse animations.
+- **Typography & Hierarchy**: use deliberate font pairing and clear size/weight contrast; keep prose scannable with generous whitespace and equal visual edges/alignment.
+- **Real Content & UI**: use realistic domain copy, real product UI previews, or genuine photography/SVG assets instead of lorem ipsum or empty placeholder boxes.
+- **Quiet Micro-Interactions**: keep hover/focus/transition states crisp and functional (`150ms–200ms` ease), never distracting.
+
+## 3. Layout & Responsiveness Checklist
+- Ensure zero horizontal overflow at both desktop (`1280px+`) and mobile (`375px`) viewports.
+- Maintain accessible color contrast, visible focus rings, and semantic HTML landmarks.
