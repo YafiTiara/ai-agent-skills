@@ -12,10 +12,11 @@ Each skill bundles practical engineering checklists, guardrails, and step-by-ste
 | [`ui-craft-antislop`](skills/ui-craft-antislop/SKILL.md) | Frontend & UI design | Building or restyling web apps and dashboards with cohesive design tokens (`DESIGN.md` / `PRODUCT.md`). |
 | [`browser-qa-verifier`](skills/browser-qa-verifier/SKILL.md) | End-to-end UI testing | Verifying rendered pages, forms, console errors, and layout in a real browser after frontend edits. |
 | [`security-predeploy-audit`](skills/security-predeploy-audit/SKILL.md) | Security & supply chain | Auditing secrets, npm/package lockfiles, auth/API boundaries, and pre-deploy readiness. |
-| [`project-memory-mapper`](skills/project-memory-mapper/SKILL.md) | Codebase mapping | Navigating large multi-module repos, keeping markdown memory notes, and checking framework docs. |
+| [`project-memory-mapper`](skills/project-memory-mapper/SKILL.md) | Codebase mapping | Navigating large multi-module repos (with Graphify when present), keeping markdown memory notes, and checking framework docs. |
 | [`replica-mvp-architect`](skills/replica-mvp-architect/SKILL.md) | Rapid MVP scoping | Breaking down reference products (Recon -> Architect -> Build) and stress-testing technical plans. |
 | [`clean-prose-humanizer`](skills/clean-prose-humanizer/SKILL.md) | Technical & UX writing | Editing READMEs, docs, PRDs, and microcopy so text sounds direct and free of stock AI clichés. |
 | [`content-motion-studio`](skills/content-motion-studio/SKILL.md) | Short-form & motion | Scripting short-form developer content and building programmatic motion graphics with Remotion. |
+| [`caveman-mode`](skills/caveman-mode/SKILL.md) | Token compression | Opt-in ultra-concise telegraphic mode for rapid debugging, short commits, PR reviews, and memory compression. |
 
 ## Installation
 
@@ -52,6 +53,7 @@ Each skill lives in its own directory with a `SKILL.md` file containing YAML fro
 ```text
 skills/
 ├── browser-qa-verifier/SKILL.md
+├── caveman-mode/SKILL.md
 ├── clean-prose-humanizer/SKILL.md
 ├── content-motion-studio/SKILL.md
 ├── project-memory-mapper/SKILL.md

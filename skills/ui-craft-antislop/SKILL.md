@@ -17,8 +17,14 @@ description: >-
 - **Reject generic AI clichés**: avoid purple/indigo-pink neon gradients, floating glassmorphic cards everywhere, generic 3-column icon-box grids, fake vanity metrics, and gratuitous bounce/pulse animations.
 - **Typography & Hierarchy**: use deliberate font pairing and clear size/weight contrast; keep prose scannable with generous whitespace and equal visual edges/alignment.
 - **Real Content & UI**: use realistic domain copy, real product UI previews, or genuine photography/SVG assets instead of lorem ipsum or empty placeholder boxes.
-- **Quiet Micro-Interactions**: keep hover/focus/transition states crisp and functional (`150ms–200ms` ease), never distracting.
 
-## 3. Layout & Responsiveness Checklist
+## 3. Motion, Gestures & 3D Hygiene (Emil Kowalski + GSAP + WebGL)
+- **Crafted Easing & GPU-Only**: use deliberate custom `cubic-bezier` curves or spring physics (`150ms–300ms`) with natural `transform-origin`; animate only composited properties (`transform`, `opacity`, `clip-path`)—never `width`, `height`, `top`, or `left`.
+- **Interruptible & Accessible**: interactive gestures (drawers, sheets, drags) should track 1:1 and stay interruptible; always respect `prefers-reduced-motion`.
+- **GSAP Lifecycle**: in React/frameworks, wrap animations in `useGSAP()` (or `gsap.context()` revert) for automatic cleanup, and use `gsap.matchMedia()` for responsive/motion rules.
+- **3D / WebGL Hygiene**: lazy-load Three.js/R3F/Spline canvases, dispose geometries/materials/textures on unmount, and cap pixel ratio (`dpr`) or provide a static fallback on mobile.
+
+## 4. Layout & Mobile-Native Checklist
 - Ensure zero horizontal overflow at both desktop (`1280px+`) and mobile (`375px`) viewports.
+- **Mobile-Native Web**: prefer `100dvh` over `100vh`, respect `env(safe-area-inset-*)`, guard hover states with `@media (hover: hover)`, and remove jarring tap highlights.
 - Maintain accessible color contrast, visible focus rings, and semantic HTML landmarks.
