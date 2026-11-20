@@ -21,7 +21,7 @@ description: >-
 ## 3. Motion, Gestures & 3D Hygiene (Emil Kowalski + GSAP + WebGL)
 - **Crafted Easing & GPU-Only**: use deliberate custom `cubic-bezier` curves or spring physics (`150ms–300ms`) with natural `transform-origin`; animate only composited properties (`transform`, `opacity`, `clip-path`)—never `width`, `height`, `top`, or `left`.
 - **Interruptible & Accessible**: interactive gestures (drawers, sheets, drags) should track 1:1 and stay interruptible; always respect `prefers-reduced-motion`.
-- **GSAP Lifecycle**: in React/frameworks, wrap animations in `useGSAP()` (or `gsap.context()` revert) for automatic cleanup, and use `gsap.matchMedia()` for responsive/motion rules.
+- **GSAP Lifecycle**: in React/frameworks, wrap animations in `useGSAP()` (or `gsap.context()` revert) for automatic cleanup, and use `gsap.matchMedia()` for responsive/motion rules. With `ScrollTrigger`, set `invalidateOnRefresh: true` for responsive layouts without hijacking native scroll; with `SplitText`, keep `aria-label` on the parent element for screen readers.
 - **3D / WebGL Hygiene**: lazy-load Three.js/R3F/Spline canvases, dispose geometries/materials/textures on unmount, and cap pixel ratio (`dpr`) or provide a static fallback on mobile.
 
 ## 4. Layout & Mobile-Native Checklist
