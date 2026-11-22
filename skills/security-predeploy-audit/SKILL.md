@@ -17,12 +17,13 @@ description: >-
 ## 2. Semantic Data-Flow & Business Logic Audit
 - **Taint / Data-Flow Tracing**: trace untrusted input from **Source** (query, body, headers, webhook, file upload) → **Sanitizer/Validator** → **Sink** (SQL/ORM raw query, shell exec, HTML render, SSRF URL fetch, filesystem path). Flag unvalidated paths.
 - **Business Logic & State Abuse**: check for IDOR (missing ownership/tenant check on resource IDs), race conditions/TOCTOU on balance/stock/quota mutations (use atomic DB transactions/locks), and state-transition bypasses (e.g., skipping payment/verification steps).
-- **Auth, RBAC & RLS**: enforce authentication and authorization checks on every protected route and database policy (e.g., Supabase RLS).
+- **Auth, RBAC & RLS**: enforce authentication and authorization checks on every protected route and database policy (e.g., Supabase RLS). Harden sessions/tokens (`HttpOnly`/`Secure`/`SameSite` cookies, strict JWT `alg`/expiry) and verify webhook HMAC signatures.
 
 ## 3. API Reliability & Database Performance
-- **API Reliability**: check rate limiting, CORS allowlists (no wildcard `*` with credentials), request timeouts, idempotency on mutations, and proper error handling without leaking stack traces.
+- **API Reliability**: check rate limiting, CORS allowlists (no wildcard `*` with credentials), security headers (`CSP`, `HSTS`, `X-Content-Type-Options`), request timeouts, idempotency on mutations, and proper error handling without leaking stack traces.
 - **Database Performance**: check for N+1 queries, missing indexes on foreign/filter columns, and connection pool limits.
 
 ## 4. Diff Review & Staging Verification
+- **Validation Gate & Chaining**: before reporting Critical/High findings, verify a reachable entry point, missing guard, and concrete impact (avoid theoretical false positives); check if Low/Medium flaws chain into a higher-severity exploit.
 - **PR / `git diff` Security Review**: when auditing changes, report findings in structured format: `[Severity: Critical/High/Medium/Low] file:line — risk -> minimal patch`.
 - **Staging Verification**: before production release, run automated security checks (e.g., `strix` or OWASP/lint security rules) against the staging environment.
